@@ -89,18 +89,17 @@ class CircleOfLuck(object):
             return GuessOutcome.INCORRECT
 
 
-def underline_print(l=None):
-    if not l:
+def underline_print(letter=None):
+    if not letter:
         console.print(" ", end="")
-    elif ispunct(l):
-        console.print(f"{l}", end="")
+    elif ispunct(letter):
+        console.print(f"{letter}", end="")
     else:
-        console.print(f"{l}", style="u", end="")
+        console.print(f"{letter}", style="u", end="")
     console.print(" ", end="")
 
 
 def render(game_state):
-    output = []
     for x in game_state:
         match x:
             case "*":
@@ -113,9 +112,9 @@ def render(game_state):
     # console.print(" ".join(output), style='underline')
 
 
-def article_for_letter(l):
+def article_for_letter(letter):
     an_letters = "aeioumhlnrsx"
-    if l in an_letters:
+    if letter in an_letters:
         return "an"
     else:
         return "a"
